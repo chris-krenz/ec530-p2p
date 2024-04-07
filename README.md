@@ -1,6 +1,6 @@
 ## About
 
-Example P2P project for EC530.  Based on some tutorials discussed in class.
+Example P2P project for EC530.  Based on tutorials we discussed in class.
 
 
 ## Install
