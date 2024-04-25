@@ -23,7 +23,10 @@ Start the server and any number of clients with the following commands.
 ```console
 python chat_server.py <ip-address> 8081
 python client.py <ip-address> 8081
+python client.py <ip-address> 8081
 ```
+
+Then send messages to either of the client to see them appear on the other client (and server).
 
 
 ## Contributors

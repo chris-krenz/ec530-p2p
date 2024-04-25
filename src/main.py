@@ -10,15 +10,16 @@ import logging as log
 
 
 def main():
-    print('\nStarting program...')
+    # print('\nStarting program...')
 
     logger.config_logger()
 
     # matmul.matmul([2, 2], [3, 3])
 
-    log.info('Run following commands on command line:\n'
-             'python chat_server.py <ip-address> 8081\n'
-             'python client.py <ip-address> 8081\n')
+    log.info('Run following commands in separate terminals to enable P2P between clients:\n'
+             'python chat_server.py <ip-address> 8081\n'  # server
+             'python client.py <ip-address> 8081\n'       # client1
+             'python client.py <ip-address> 8081\n')      # client2
 
 
 if __name__ == '__main__':
