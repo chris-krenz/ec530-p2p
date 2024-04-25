@@ -1,3 +1,7 @@
+"""
+https://www.geeksforgeeks.org/simple-chat-room-using-python/
+"""
+
 import socket
 import select
 import sys
@@ -22,7 +26,9 @@ list_of_clients = []
 
 def clientthread(conn, addr):
 
-    conn.send("Hello!")
+    msg = "Hello!".encode()
+
+    conn.send(msg)
 
     while True:
         try:
@@ -38,13 +44,13 @@ def clientthread(conn, addr):
 
 
 def broadcast(message, connection):
-    for clients in list_of_clients:
-        if clients != connection:
+    for client in list_of_clients:
+        if client != connection:
             try:
-                clients.send(message)
+                client.send(message.encode())
             except:
-                clients.close()
-                remove(clients)
+                client.close()
+                remove(client)
 
 
 def remove(connection):
@@ -54,6 +60,7 @@ def remove(connection):
 
 while True:
     conn, addr = server.accept()
+    conn.setblocking(False)
     list_of_clients.append(conn)
     log.info(addr[0] + " connected")
     start_new_thread(clientthread, (conn, addr))

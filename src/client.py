@@ -1,3 +1,7 @@
+"""
+https://www.geeksforgeeks.org/simple-chat-room-using-python/
+"""
+
 import socket
 import select
 import sys
@@ -22,7 +26,7 @@ while True:
             log.info(message)
         else:
             message = sys.stdin.readline()
-            server.send(message)
+            server.send(message.encode())
             sys.stdout.write("<You>")
             sys.stdout.write(message)
             sys.stdout.flush()
