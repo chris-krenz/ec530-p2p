@@ -29,6 +29,15 @@ python client.py <ip-address> 8081
 Then send messages to either of the client to see them appear on the other client (and server).
 
 
+## Data Protection/Input Sanitization
+
+Basic input sanitation has been implemented to ensure malicious commands are not sent via the messaging system.
+
+Inputs are screened for special characters, primarily those indicative of a potential SQL query. 
+
+An error is returned if the user has tried to transmit a potentially malicious message. 
+
+
 ## Contributors
 
 Chris Krenz

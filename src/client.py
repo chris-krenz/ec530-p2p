@@ -1,5 +1,6 @@
 """
 Based on: https://www.geeksforgeeks.org/simple-chat-room-using-python/
+Try: python client.py <IP address> 8081
 """
 
 import socket
@@ -19,6 +20,7 @@ Port       = int(sys.argv[2])
 
 server.connect((IP_address, Port))
 
+# Main Client Loop
 while True:
     sockets_list        = [sys.stdin, server]
     read_sockets, _, __ = select.select(sockets_list, [], [])
